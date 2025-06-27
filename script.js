@@ -2,6 +2,7 @@ var lastRequest = new Date().getTime()
 const delay = 1000
 
 document.getElementById('signup-form').addEventListener('submit', function(event) {
+    event.preventDefault()
     if (new Date().getTime() - lastRequest > delay) {
         lastRequest = new Date.getTime()
         const username = document.getElementById('username').value;
