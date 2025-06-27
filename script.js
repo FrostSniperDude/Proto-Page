@@ -4,7 +4,7 @@ document.getElementById('signup-form').addEventListener('submit', function(event
     const password = document.getElementById('password').value;
 
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://mjtvoolokpjzqrxjzmti.supabase.co/functions/v1/database-access', true);
+    xhr.open('PUT', 'https://mjtvoolokpjzqrxjzmti.supabase.co/functions/v1/database-access', true);
     xhr.setRequestHeader('Content-Type', 'application/json');
 
     xhr.onreadystatechange = function() {
