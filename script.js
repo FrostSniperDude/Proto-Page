@@ -18,6 +18,7 @@ document.getElementById('signup-form').addEventListener('submit', function(event
     };
 
     const data = JSON.stringify({
+    type: "signup",
     username: username,
     password: password
     });
