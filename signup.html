@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Proto Signup</title>
+  <title>Proto Sign Up</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
@@ -17,14 +17,14 @@
       flex-direction: column;
     }
 
-    /* Top Header Bar */
+    /* Top Header Bar (same as index.html) */
     header {
       width: 100%;
       background: rgba(0, 0, 0, 0.5);
       padding: 15px 30px;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       position: sticky;
       top: 0;
       z-index: 10;
@@ -39,7 +39,26 @@
       text-shadow: 0 0 10px rgba(255,255,255,0.7);
     }
 
-    /* Container for signup form */
+    /* Button styles in header (Sign Up or Back) */
+    .header-btn {
+      padding: 10px 20px;
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1em;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(255,70,104,0.3);
+      transition: all 0.3s ease;
+    }
+
+    .header-btn:hover {
+      box-shadow: 0 6px 14px rgba(255,70,104,0.5);
+      transform: translateY(-2px);
+    }
+
+    /* Container for the form */
     .container {
       flex: 1;
       display: flex;
@@ -47,7 +66,7 @@
       justify-content: center;
     }
 
-    /* Signup box styling */
+    /* Signup form box */
     .signup-box {
       background: rgba(255, 255, 255, 0.1);
       padding: 40px;
@@ -107,30 +126,17 @@
       transform: scale(1.02);
     }
 
-    /* Back Button Styles */
-    .back-button {
-      padding: 15px;
-      font-size: 1.3em;
-      border: none;
-      border-radius: 10px;
-      background: linear-gradient(45deg, #777, #555);
-      color: #fff;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      transition: all 0.3s;
-      margin-top: 20px;
-    }
-
-    .back-button:hover {
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-      transform: translateY(-2px);
-    }
+    /* Submit button style (if needed later) */
+    /* Optional: You can add a submit button here if desired */
   </style>
 </head>
 <body>
-  <!-- Top header bar -->
+  <!-- Top header bar: same style as index.html -->
   <header>
     <h1>Proto</h1>
+    <!-- Show Sign Up button on main page, Back button on signup page -->
+    <!-- For this signup page, we'll add a Back button -->
+    <a href="index.html" class="header-btn">Back</a>
   </header>
 
   <!-- Signup form container -->
@@ -140,10 +146,9 @@
       <form id="signup-form">
         <input type="text" id="username" placeholder="Username" required />
         <input type="password" id="password" placeholder="Password" required />
-        <!-- You can add more fields if needed -->
-        <!-- Instead of submit button, add a back button -->
+        <!-- You can add a submit button if needed -->
+        <!-- <button type="submit">Sign Up</button> -->
       </form>
-      <button class="back-button" onclick="window.location.href='index.html'">Back</button>
     </div>
   </div>
 </body>
