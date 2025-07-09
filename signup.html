@@ -15,19 +15,17 @@
       font-family: 'Orbitron', sans-serif;
       display: flex;
       flex-direction: column;
-      overflow-x: hidden; /* Prevent horizontal scroll */
+      overflow-x: hidden; /* Prevent horizontal scroll on entire page */
     }
 
-    /* Top Header Bar (same as index.html) */
+    /* Top Header Bar: ensure it stays within bounds and content doesn't overflow */
     header {
       width: 100%;
-      max-width: 100%;
       background: rgba(0, 0, 0, 0.5);
-      padding: 15px 30px;
+      padding: 15px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: nowrap;
       position: sticky;
       top: 0;
       z-index: 10;
@@ -40,9 +38,10 @@
       letter-spacing: 2px;
       color: #fff;
       text-shadow: 0 0 10px rgba(255,255,255,0.7);
+      flex-shrink: 1; /* allow shrinking if needed */
     }
 
-    /* Style for the back button to prevent overflow and stay within header */
+    /* Style for the back button to stay within the header */
     .header-btn {
       padding: 10px 20px;
       background: linear-gradient(45deg, #ff416c, #ff4b2b);
@@ -52,10 +51,12 @@
       font-size: 1em;
       cursor: pointer;
       text-decoration: none;
+      max-width: 100px; /* limit width to prevent overflow */
+      white-space: nowrap; /* prevent wrapping */
+      overflow: hidden; /* hide overflow if text is long */
+      text-overflow: ellipsis; /* show ellipsis if overflowed */
       box-shadow: 0 4px 10px rgba(255,70,104,0.3);
       transition: all 0.3s ease;
-      white-space: nowrap; /* Prevent wrapping */
-      max-width: 100%;
     }
 
     .header-btn:hover {
@@ -130,15 +131,12 @@
       background: rgba(255,255,255,0.3);
       transform: scale(1.02);
     }
-
-    /* Optional: add a submit button later if needed */
   </style>
 </head>
 <body>
-  <!-- Top header bar: same as index.html -->
+  <!-- Top header bar with title and back button -->
   <header>
     <h1>Proto</h1>
-    <!-- Back button stays within the header, no wrapping, no overflow -->
     <a href="index.html" class="header-btn">Back</a>
   </header>
 
