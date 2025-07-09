@@ -7,7 +7,18 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
-        /* Top Header Bar */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      font-family: 'Orbitron', sans-serif;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden; /* Prevent horizontal scroll */
+    }
+
+    /* Top Header Bar */
     header {
       width: 100%;
       background: rgba(0, 0, 0, 0.5);
@@ -15,7 +26,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      position: sticky; /* Keeps header on top when scrolling */
+      position: sticky;
       top: 0;
       z-index: 10;
       box-shadow: 0 2px 8px rgba(0,0,0,0.3);
@@ -25,10 +36,11 @@
       font-size: 2em;
       margin: 0;
       letter-spacing: 2px;
+      color: #fff;
       text-shadow: 0 0 10px rgba(255,255,255,0.7);
     }
 
-    /* Button in header (optional) */
+    /* Style for the back button to stay within the header */
     .header-btn {
       padding: 10px 20px;
       background: linear-gradient(45deg, #ff416c, #ff4b2b);
@@ -38,10 +50,13 @@
       font-size: 1em;
       cursor: pointer;
       text-decoration: none;
+      max-width: 100px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       box-shadow: 0 4px 10px rgba(255,70,104,0.3);
       transition: all 0.3s ease;
     }
-
     .header-btn:hover {
       box-shadow: 0 6px 14px rgba(255,70,104,0.5);
       transform: translateY(-2px);
