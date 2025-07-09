@@ -15,16 +15,19 @@
       font-family: 'Orbitron', sans-serif;
       display: flex;
       flex-direction: column;
+      overflow-x: hidden; /* Prevent horizontal scroll */
     }
 
     /* Top Header Bar (same as index.html) */
     header {
       width: 100%;
+      max-width: 100%;
       background: rgba(0, 0, 0, 0.5);
       padding: 15px 30px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: nowrap;
       position: sticky;
       top: 0;
       z-index: 10;
@@ -39,7 +42,7 @@
       text-shadow: 0 0 10px rgba(255,255,255,0.7);
     }
 
-    /* Button styles in header (Sign Up or Back) */
+    /* Style for the back button to prevent overflow and stay within header */
     .header-btn {
       padding: 10px 20px;
       background: linear-gradient(45deg, #ff416c, #ff4b2b);
@@ -51,6 +54,8 @@
       text-decoration: none;
       box-shadow: 0 4px 10px rgba(255,70,104,0.3);
       transition: all 0.3s ease;
+      white-space: nowrap; /* Prevent wrapping */
+      max-width: 100%;
     }
 
     .header-btn:hover {
@@ -58,7 +63,7 @@
       transform: translateY(-2px);
     }
 
-    /* Container for the form */
+    /* Container for the form, centered vertically and horizontally */
     .container {
       flex: 1;
       display: flex;
@@ -66,7 +71,7 @@
       justify-content: center;
     }
 
-    /* Signup form box */
+    /* Signup box styling */
     .signup-box {
       background: rgba(255, 255, 255, 0.1);
       padding: 40px;
@@ -102,7 +107,7 @@
       
       /* Placeholder styling */
       ::placeholder {
-        color: #ddd; /* Clearer placeholder color */
+        color: #ddd;
         opacity: 1;
       }
     }
@@ -126,16 +131,14 @@
       transform: scale(1.02);
     }
 
-    /* Submit button style (if needed later) */
-    /* Optional: You can add a submit button here if desired */
+    /* Optional: add a submit button later if needed */
   </style>
 </head>
 <body>
-  <!-- Top header bar: same style as index.html -->
+  <!-- Top header bar: same as index.html -->
   <header>
     <h1>Proto</h1>
-    <!-- Show Sign Up button on main page, Back button on signup page -->
-    <!-- For this signup page, we'll add a Back button -->
+    <!-- Back button stays within the header, no wrapping, no overflow -->
     <a href="index.html" class="header-btn">Back</a>
   </header>
 
@@ -146,8 +149,6 @@
       <form id="signup-form">
         <input type="text" id="username" placeholder="Username" required />
         <input type="password" id="password" placeholder="Password" required />
-        <!-- You can add a submit button if needed -->
-        <!-- <button type="submit">Sign Up</button> -->
       </form>
     </div>
   </div>
