@@ -7,16 +7,27 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
 
-    body {
+    /* Reset default scrollbar for WebKit browsers */
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Orbitron', sans-serif;
       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: #fff;
       height: 100vh;
       display: flex;
       flex-direction: column;
-      overflow-y: auto;
+      overflow: hidden; /* Hide default scrollbars */
+      scroll-behavior: smooth;
+    }
+
+    /* Custom scrollbar styling for WebKit browsers (optional, for better look) */
+    body::-webkit-scrollbar {
+      width: 0px;
     }
 
     /* Top Header Bar */
@@ -27,7 +38,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      position: sticky; /* Keeps header on top when scrolling */
+      position: sticky;
       top: 0;
       z-index: 10;
       box-shadow: 0 2px 8px rgba(0,0,0,0.3);
@@ -35,12 +46,11 @@
 
     header h1 {
       font-size: 2em;
-      margin: 0;
       letter-spacing: 2px;
       text-shadow: 0 0 10px rgba(255,255,255,0.7);
     }
 
-    /* Button in header (optional) */
+    /* Sign Up Button in header */
     .header-btn {
       padding: 10px 20px;
       background: linear-gradient(45deg, #ff416c, #ff4b2b);
@@ -66,8 +76,14 @@
       flex-direction: column;
       align-items: center;
       padding: 50px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
+      width: 100%;
+      overflow-y: auto; /* Enable vertical scrolling within main */
+      scrollbar-width: none; /* Firefox */
+    }
+
+    /* Hide scrollbar for WebKit browsers */
+    main::-webkit-scrollbar {
+      display: none;
     }
 
     /* Main Title */
@@ -97,7 +113,6 @@
       text-align: center;
     }
 
-    /* Example placeholder for wiki content */
     .wiki-content {
       font-size: 1.1em;
       line-height: 1.6;
@@ -124,10 +139,12 @@
       transform: translateY(-3px);
     }
 
-    /* Make the page scroll smoothly */
+    /* Custom smooth scrolling effect (e.g., easing) */
     html {
       scroll-behavior: smooth;
     }
+
+    /* Add a custom scroll effect with easing via JavaScript later if needed */
   </style>
 </head>
 <body>
@@ -152,8 +169,15 @@
       </div>
     </section>
 
-    <!-- Optional: Add more content below -->
+    <!-- Get Started Button -->
     <a href="signup.html" class="cta-button">Get Started</a>
   </main>
+
+  <!-- Optional: Add JavaScript for enhanced smooth scrolling with easing -->
+  <script>
+    // Example of custom scroll easing (if needed)
+    // You can implement a smooth scroll with easing here
+    // But browsers now support 'scroll-behavior: smooth' for basic smooth scrolling
+  </script>
 </body>
 </html>
